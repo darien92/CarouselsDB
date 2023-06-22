@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.darien.carousels.model.CarouselItemDM
+import com.darien.carousels.utils.recomposeHighlighter
 
 @Composable
 fun CarouselElement(
@@ -26,6 +27,7 @@ fun CarouselElement(
             .clickable {
                 onItemClicked(carouselItemDM.id)
             }
+            .recomposeHighlighter()
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

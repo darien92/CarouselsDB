@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.darien.carousels.model.CarouselItemDM
+import com.darien.carousels.utils.recomposeHighlighter
 
 @Composable
 fun CarouselView(
@@ -21,7 +22,9 @@ fun CarouselView(
 ) {
     Column(modifier = modifier
         .padding(8.dp)
-        .height(120.dp)) {
+        .height(120.dp)
+        .recomposeHighlighter()
+    ) {
         LazyRow {
             itemsIndexed(elements) { index, item ->
                 if (index == elements.lastIndex) {

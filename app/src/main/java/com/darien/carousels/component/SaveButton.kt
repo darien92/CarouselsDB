@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.darien.carousels.R
 import com.darien.carousels.db.SaveViewModel
+import com.darien.carousels.utils.recomposeHighlighter
 
 @Composable
 fun SaveButton(
@@ -43,6 +44,7 @@ fun SaveButton(
         modifier = modifier.clickable {
             viewModel.setStatus(id, !saved)
         }
+            .recomposeHighlighter()
     ) {
         Image(
             modifier = Modifier.fillMaxSize(),
